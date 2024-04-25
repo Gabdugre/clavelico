@@ -1,0 +1,31 @@
+<?php
+
+require '../vendor/autoload.php';
+
+// Constants
+define('SRC', '../src/');
+
+// Load environment variables from .env file
+$dotenv = Dotenv\Dotenv::createImmutable(SRC . 'config');
+$dotenv->load();
+
+require SRC . 'config/database.php';
+
+$router = new AltoRouter();
+//$router->setBasePath('/vitrine');
+
+require SRC . 'routes/public.php';
+require SRC . 'routes/admin.php';
+
+$match = $router->match();
+require SRC . 'includes/functions';
+if (!empty($match['target'])) {
+    require SRC . 'models/' . $match['target'] . 'Model.php';
+    require SRC . 'controllers/' . $match['target'] . 'Controller.php';
+    require SRC . 'views/' . $match['target'] . 'View.php';
+} else {
+    header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+};
+
+
+?>
