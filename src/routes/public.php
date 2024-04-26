@@ -4,7 +4,7 @@ $router->addMatchTypes(['slug' => '[a-z0-9]+(?:-[a-z0-9]+)*']);
 
 // Vitrine
 
-$router->map('GET', '/', 'accueil', 'accueil');
+$router->map('GET', '/', 'vitrine/accueil', 'accueil');
 $router->map('GET', '/services', '');
 $router->map('GET', '/services/details', '');
 $router->map('GET', '/tarifs', '');
