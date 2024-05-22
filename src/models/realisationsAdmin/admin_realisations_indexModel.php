@@ -1,11 +1,11 @@
 <?php
 
-function getAccueil() 
+function getRealisation()
 {
     global $db;
 
     try {
-        $sql = 'SELECT presentation_paragraphe, presentation_image FROM accueil';
+        $sql = 'SELECT id, img, lien, date_publication, client FROM realisations';
         $query = $db->prepare($sql);
         $query->execute();
 
