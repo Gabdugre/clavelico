@@ -10,7 +10,7 @@ function checkAlreadyExistEmail (): mixed
  global $db;
  if (!empty($_GET['id'])) {
 
-     $email = getUser()->email;
+     $email = getCompte($_POST['mail']);
      if ($email === $_POST['mail']) {
         return false;
      }
@@ -28,30 +28,30 @@ return $query->fetch();
 /**
  * Add a user in the database
  */
-function addUser ()
-{
-    global $db;
-    $data = [
-        'mail' => $_POST['mail'],
-        'mdp' => password_hash($_POST['mdp'], PASSWORD_DEFAULT)
-    ];
+// function addUser ()
+// {
+//     global $db;
+//     $data = [
+//         'mail' => $_POST['mail'],
+//         'mdp' => password_hash($_POST['mdp'], PASSWORD_DEFAULT)
+//     ];
 
-    try {
-        $sql = 'INSERT INTO compte (mail, mdp) VALUES (:mail, :mdp)';
-        $query = $db->prepare($sql);
-        $query->execute($data);
-        alert('Un utilisateur a bien été ajouté.', 'success');
-    } catch (PDOException $e) {
-        if ($_ENV['DEBUG'] == 'true') {
-            dump($e->getMessage());
-            die;
-        } else {
-            alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
-        }
-    }
-}
+//     try {
+//         $sql = 'INSERT INTO compte (id, mail, mdp) VALUES (:mail, :mdp)';
+//         $query = $db->prepare($sql);
+//         $query->execute($data);
+//         alert('Un utilisateur a bien été ajouté.', 'success');
+//     } catch (PDOException $e) {
+//         if ($_ENV['DEBUG'] == 'true') {
+//             dump($e->getMessage());
+//             die;
+//         } else {
+//             alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+//         }
+//     }
+// }
 
-function updateUser ()
+function updateCompte ()
 {
 
     global $db;
@@ -78,7 +78,7 @@ try {
 }
 }
 
-function getUser ()
+function getCompte ()
 {
     
 
@@ -96,7 +96,7 @@ function getUser ()
         die;
     
 } else {
-    alert('Une ereur est survenue. Merci de réessayer plus tard', 'danger');
+    Alert('Une ereur est survenue. Merci de réessayer plus tard', 'danger');
 }
 }
 

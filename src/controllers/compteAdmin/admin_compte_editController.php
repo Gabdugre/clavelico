@@ -40,9 +40,9 @@ if (!empty($_POST)) {
         if (!$errorsMessage['mail'] && !$errorsMessage['mdp'] && !$errorsMessage['pwdConfirm']) {
 
             if (!empty($_GET['id'])) {
-                updateUser();
-            } else {
-                addUser();
+                updateCompte();
+            //} else {
+                //addUser();
             }
             // Redirect to users list
               //header('Location: ' . $router->generate('users'));
@@ -55,5 +55,7 @@ if (!empty($_POST)) {
     }
 } else if (!empty($_GET['id'])) {
     // Read user data and save to $_POST
-   $_POST = (array) getUser();
+   $_POST = (array) getCompte();
+
+   var_dump($_POST);
 }

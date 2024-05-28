@@ -16,11 +16,7 @@ bonjour
           echo '<div id= "presentation_image">';
                 echo "$presentations->presentation_image";
           echo '</div>';
-                //echo '<label>';
-                //echo $cats['catName'];
-                //echo '<input type="checkbox" name="categories[]" value="' . $cats->catName . '">';
-                
-               // echo '</label>';
+
           echo '</div>';
             }
             

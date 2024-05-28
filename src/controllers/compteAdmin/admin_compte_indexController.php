@@ -1,0 +1,2 @@
+<?php
+$compte = getCompte();

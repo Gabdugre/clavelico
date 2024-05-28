@@ -1,14 +1,14 @@
 <?php
 
-$db;
+//$db;
 
 
-function getAccueil() 
+function getCompte() 
 {
     global $db;
    
     try {
-        $sql = 'SELECT id, presentation_paragraphe, presentation_image FROM accueil';
+        $sql = 'SELECT id, mail FROM compte';
         $query = $db->prepare($sql);
         $query->execute();
 
