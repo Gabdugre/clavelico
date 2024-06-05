@@ -41,12 +41,11 @@ if (!empty($_POST)) {
 
             if (!empty($_GET['id'])) {
                 updateCompte();
-            //} else {
-                //addUser();
+            
             }
             // Redirect to users list
-              //header('Location: ' . $router->generate('users'));
-                // die;
+              header('Location: ' . $router->generate('compte_admin'));
+                die;
         } else {
             alert('Erreur lors de l\'ajout de l\'utilisateur.');
         }
@@ -57,5 +56,5 @@ if (!empty($_POST)) {
     // Read user data and save to $_POST
    $_POST = (array) getCompte();
 
-   var_dump($_POST);
+   //var_dump($_POST);
 }

@@ -7,7 +7,7 @@ function checkUserAccess ()
     $query = $db->prepare($sql);
     $query->execute(['mail' => $_POST['mail']]);
 
-$user = $query->fetch();
+    $user = $query->fetch();
 
 if (password_verify($_POST['mdp'], $user->mdp)) {
     return $user->id;

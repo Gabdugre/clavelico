@@ -8,11 +8,12 @@
 <div class="mb-4">
 <?php $error = checkEmptyFields('presentation_paragraphe'); ?>
     <label for="presentation_paragraphe" class="form-label">presentation: *</label>
-    <textarea rows="4" name="presentation_paragraphe" id="presentation_paragraphe" class="form-control <?= $error['class']; ?>"><?= getValue('presentation_paragraphe'); ?></textarea>
-    <!-- <?= $error['message']; ?> -->
-    <!-- <?= $errorsMessage['presentation_paragraphe'];?> -->
+    <textarea rows="4" name="presentation_paragraphe" id="presentation_paragraphe"  class="form-control <?= $error['class']; ?>"><?php getValue('presentation_paragraphe'); ?></textarea>
+    <?= $error['message']; ?>
+    <?= $errorsMessage['presentation_paragraphe'];?>
 </div>
 <?php var_dump($_POST); ?>
+<?php echo getValue('presentation_paragraphe'); ?>
 <div class="submit">
     <input type="submit" class="btn btn-success" value="Sauvegarder">
 </div>

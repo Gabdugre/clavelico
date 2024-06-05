@@ -11,7 +11,7 @@ if (!empty($accessUser)) {
     header('Location: ' . $router->generate('menu'));
     die;
     } else {
-    alert('Identifiants incorrects');
+        alert('Identifiants incorrects');
 
     }
 }

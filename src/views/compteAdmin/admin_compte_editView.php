@@ -17,7 +17,7 @@
 <?php $error = checkEmptyFields('mdp'); ?>
     <label for="mdp" class="form-label">Mot de passe: *</label>
     <input type="password" name="mdp" id="mdp"  class="form-control <?= $error['class']; ?>">
-    <p class="form-text mb-0">La règle des mdp</p>
+    <!-- <p class="form-text mb-0">La règle des mdp</p> -->
     
     <?= $error['message']; ?>
     <?= $errorsMessage['mdp'];?>
