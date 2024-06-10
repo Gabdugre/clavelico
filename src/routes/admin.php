@@ -11,8 +11,8 @@ $router->map( 'GET|POST', $admin . '/compte/editer', 'compteAdmin/admin_compte_i
 $router->map( 'GET|POST', $admin . '/compte/editer/[i:id]', 'compteAdmin/admin_compte_edit', 'edit_compte_admin'); 
 
 // Accueil
-$router->map( 'GET', $admin . '/accueil/editer', 'accueilAdmin/admin_accueil_index', 'accueil_admin');
-$router->map( 'GET', $admin . '/accueil/editer/[i:id]', 'accueilAdmin/admin_accueil_edit', 'editAccueil');
+$router->map( 'GET|POST', $admin . '/accueil/editer', 'accueilAdmin/admin_accueil_index', 'accueil_admin');
+$router->map( 'GET|POST', $admin . '/accueil/editer/[i:id]', 'accueilAdmin/admin_accueil_edit', 'editAccueil');
 
 // Services
 $router->map( 'GET', $admin . '/services', 'servicesAdmin/admin_services', 'service_admin');
@@ -24,4 +24,4 @@ $router->map( 'GET|POST', $admin . '/services/editer/[i:id]', 'movies/admin_movi
 $router->map( 'GET', $admin . '/realisations', 'realisationsAdmin/admin_realisations_index', 'realisationli');
 $router->map( 'GET|POST', $admin . '/realisations/editer/[i:id]', '', '');
 $router->map( 'GET|POST', $admin . '/realisations/editer', 'realisationsAdmin/admin_realisations_edit', 'addRealisation');
-$router->map( 'GET', $admin . '/realisations/supprimer/[i:id]', '', '');
+$router->map( 'GET|POST', $admin . '/realisations/supprimer/[i:id]', '', '');

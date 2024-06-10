@@ -25,31 +25,7 @@ $query->execute();
 return $query->fetch();
 }
 
-/**
- * Add a user in the database
- */
-// function addUser ()
-// {
-//     global $db;
-//     $data = [
-//         'mail' => $_POST['mail'],
-//         'mdp' => password_hash($_POST['mdp'], PASSWORD_DEFAULT)
-//     ];
 
-//     try {
-//         $sql = 'INSERT INTO compte (id, mail, mdp) VALUES (:mail, :mdp)';
-//         $query = $db->prepare($sql);
-//         $query->execute($data);
-//         alert('Un utilisateur a bien été ajouté.', 'success');
-//     } catch (PDOException $e) {
-//         if ($_ENV['DEBUG'] == 'true') {
-//             dump($e->getMessage());
-//             die;
-//         } else {
-//             alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
-//         }
-//     }
-// }
 
 function updateCompte ()
 {

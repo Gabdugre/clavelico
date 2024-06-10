@@ -15,7 +15,7 @@ try {
     $sql = 'UPDATE accueil SET presentation_paragraphe = :presentation_paragraphe, modified = NOW() WHERE id = :id';
     $query = $db->prepare($sql);
     $query->execute($data);
-    alert('La presetation a bien été modifié.', 'success');
+    alert('Une presentation a bien été modifiée.', 'success');
 } catch (PDOException $e) {
 
     if ($_ENV['DEBUG'] == 'true') {
@@ -26,26 +26,30 @@ try {
     }
 
 }
+
 }
 
 
-function getAccueil() 
+function getAccueil ()
 {
-    global $db;
-   
-    try {
-        $sql = 'SELECT id, presentation_paragraphe FROM accueil';
-        $query = $db->prepare($sql);
-        $query->execute();
+    
 
-        return $query->fetchAll();
-    } catch (PDOException $e) {
-        if ($_ENV['DEBUG'] == 'true') {
-            dump($e->getMessage());
-            die;
-        } else {
-            Alert('Une ereur est survenue. Merci de réessayer plus tard', 'danger');
-        }
-    }
+    global $db;
+
+    try {
+    $sql = 'SELECT presentation_paragraphe FROM accueil WHERE id = :id';
+    $query = $db->prepare($sql);
+    $query->execute(['id' => $_GET['id']]);
+
+    return $query->fetch();
+}   catch (PDOException $e){
+    if ($_ENV['DEBUG'] == 'true'){
+        dump($e->getMessage());
+        die;
+    
+} else {
+    Alert('Une ereur est survenue. Merci de réessayer plus tard', 'danger');
 }
-?>
+}
+
+}
