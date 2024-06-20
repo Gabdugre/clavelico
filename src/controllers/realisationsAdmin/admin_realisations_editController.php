@@ -1,55 +1,45 @@
 <?php
 
+
+
 $errorsMessage = [
-    'title' => false,
-    'synopsis' => false,
-    'casting' => false,
-    'director' => false,
-    'date' => false,
-    'duration' => false,
-    'photo' => false,
-    'notePress' => false,
-    'category' => false
+    'client' => false,
+    'img' => false,
+    'lien' => false,
+    'date_publication' => false,
+    'categorie_id' => false
 ];
 
-if (!empty($_POST)) {
-    if (!empty($_POST['title'])){
-        $title = $_POST['title'];
-   if (!empty(checkAlreadyExistMovie())) {
-        
-        $errorsMessage['title'] = 'Le titre existe déjà';
-    }
-    }
-    
-    
-    
 
+    
+    
+   
     
     //code !empty répétitif, possibilitée d'imbriqué deux blocs de code ?
     
     //save user in database
-if (!empty($_POST['title']) &&  !empty($_POST['synopsis']) && !empty($_POST['casting'])  && !empty($_POST['director']) && !empty($_POST['date']) && !empty($_POST['duration']) && !empty($_POST['notePress'])) {
-    if (!$errorsMessage['title'] &&  !$errorsMessage['synopsis'] && !$errorsMessage['casting'] && !$errorsMessage['director'] && !$errorsMessage['date'] && !$errorsMessage['duration'] && !$errorsMessage['notePress']) {
-       
+if (!empty($_POST['client']) &&  !empty($_FILES['img']) && !empty($_POST['lien'])  && !empty($_POST['date_publication'])) {
+    if (!$errorsMessage['client'] &&  !$errorsMessage['img'] && !$errorsMessage['lien'] && !$errorsMessage['date_publication']) {
+    
       if (!empty($_GET['id'])) {
-                updateMovie();
+                updateRealisation();
             } else {
-                addMovie();
+                addRealisation();
             }
             // Redirect to users list
-            header('Location: ' . $router->generate('moviesLi'));
+            header('Location: ' . $router->generate('realisationLi'));
             die;
         } else {
-            alert('Erreur lors de l\'ajout du film.');
+            alert('Erreur lors de l\'ajout de la réalisation.');
         }
     } else {
         alert('Merci de remplir tous les champs obligatoires.');
     }
-} else if (!empty($_GET['id'])) {
+ if (!empty($_GET['id'])) {
     // Read movie data and save to $_POST
-   $_POST = (array) getMovie();
+   $_POST = (array) getRealisation();
    
 }
 
 
-$cat = getCat();
+ $cat = getCat();

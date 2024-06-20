@@ -8,7 +8,7 @@
 
 <div><button><a href="<?= $router->generate('service_admin'); ?>">Services</a></button></div>
 
-<div><button><a href="<?= $router->generate('realisationli'); ?>">Réalisations</a></button></div>
+<div><button><a href="<?= $router->generate('realisationLi'); ?>">Réalisations</a></button></div>
 
 <div><button><a href="<?= $router->generate('compte_admin'); ?>">Compte Admin</a></button></div>
 

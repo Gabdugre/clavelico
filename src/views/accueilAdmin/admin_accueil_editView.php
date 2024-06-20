@@ -8,7 +8,7 @@
 <div class="mb-4">
 <?php $error = checkEmptyFields('presentation_paragraphe'); ?>
     <label for="presentation_paragraphe" class="form-label">presentation: *</label>
-    <textarea rows="4" name="presentation_paragraphe" id="presentation_paragraphe"  class="form-control <?= $error['class']; ?>"><?php echo (getValue('presentation_paragraphe')); ?></textarea>
+    <textarea rows="4" name="presentation_paragraphe" id="presentation_paragraphe"  class="form-control <?= $error['class']; ?>"><?= getValue('presentation_paragraphe'); ?></textarea>
     <?= $error['message']; ?>
     <?= $errorsMessage['presentation_paragraphe'];?>
 </div>

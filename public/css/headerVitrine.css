@@ -7,9 +7,6 @@ header #navbar {
     display: flex;
 	max-width: auto;
 justify-content: space-between;
-	
-
-  
     background-color:#CEA1A1;
 }
 
@@ -20,11 +17,8 @@ justify-content: space-between;
    margin-left: 118px;
 }
 
-#logo :hover {
-    background-color:#711312;
-    color:#CEA1A1;
-}
-#menu{
+
+#menu {
 
 display: flex;
 margin-top: 50px;
@@ -33,32 +27,35 @@ justify-content: space-between;
 
 
 
-
 }
-.nav {
+
+a{
+    text-decoration: none;
+    color : #711312;
+    width: 100%;
+}
+.nav  {
+    max-width: auto;
     display: flex;
     padding-left: 50px;
     padding-right: 50px;
-cursor: pointer;
+    cursor: pointer;
     border-right: 2px solid #711312;
-    
     height: 50px;
- 
     color: #711312;
     font-size: 25px;
     padding-top : 10px;
-    
 }
 
 #menu #contact {
     border: none;
 }
 
-#menu :hover{
-    color:#CEA1A1;
+/* #menu :hover {
 background-color:#711312;
-}
-/* .nav :hover {
+} */
+.nav:hover a,
+.nav:hover {
     color:#CEA1A1;
     background-color:#711312;
-} */
+}

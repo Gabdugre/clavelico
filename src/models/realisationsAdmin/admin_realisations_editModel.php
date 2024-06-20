@@ -1,9 +1,8 @@
 <?php
 
 $db;
-
 /***
- * Check if the movie is already in the database
+ * Check if the relisation is already in the database
  * I have to check getMovie's function
  */
 // function checkAlreadyExistRealisation(): mixed
@@ -29,22 +28,26 @@ $db;
 /**
  * Add a user in the database
  */
+
 function addRealisation()
 {
+
     global $db;
     $data = [
         'client' => $_POST['client'],
-        'img' => $_POST['img'],
+        'img' => $_FILES['img']["name"],
         'lien' => $_POST['lien'],
-        'date_publication' => $_POST['date_publication']
-    
+        'date_publication' => $_POST['date_publication'],
+        'categorie_id' => $_POST['categorie_id'][0],
+        //'id' => $_POST['id'],
+        //'catName' => $_POST['catName']
     ];
 
     try {
-        $sql = 'INSERT INTO realisations (client, img, lien, date_publication) VALUES (:client, :img, :lien, :date_publication)';
+        $sql = 'INSERT INTO realisations (client, img, lien, date_publication, categorie_id) VALUES (:client, :img, :lien, :date_publication, :categorie_id)';
         $query = $db->prepare($sql);
         $query->execute($data);
-        alert('Un film a bien été ajouté.', 'success');
+        alert('Une réalisation a bien été ajouté.', 'success');
     } catch (PDOException $e) {
         if ($_ENV['DEBUG'] == 'true') {
             dump($e->getMessage());
@@ -53,55 +56,67 @@ function addRealisation()
             alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
         }
     }
-}
-
-
-function addRealisationCategorie()
-{
-    global $db;
-    $data = [
-       'id' => $_GET['id'],
-       'catName' => $_POST['catName']
-        
-    ];
 
     try {
-       $sql = 'SELECT categories.id, categories.name FROM categories
-               JOIN categorie ON realisations.id_categorie = categorie.id';
-
-        alert('Un film a bien été ajouté.', 'success');
-    } catch (PDOException $e) {
-        if ($_ENV['DEBUG'] == 'true') {
-            dump($e->getMessage());
-            die;
-        } else {
-            alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
-        }
-    }  
+        $sql = 'SELECT * FROM categories
+                JOIN realisations ON realisations.categorie_id = categorie.id';
+ 
+         alert('Un réalisation a bien été ajouté.', 'success');
+     } catch (PDOException $e) {
+         if ($_ENV['DEBUG'] == 'true') {
+             dump($e->getMessage());
+             die;
+         } else {
+             alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+         }
+     }  
 }
+
+
+// function addRealisationCategorie()
+// {
+//     global $db;
+//     $data = [
+//        'id' => $_GET['id'],
+//        'catName' => $_POST['catName']
+        
+//     ];
+
+//     try {
+//        $sql = 'SELECT categories.id, categories.catName FROM categories
+//                JOIN realisations ON realisations.id_categorie = categorie.id';
+
+//         alert('Un film a bien été ajouté.', 'success');
+//     } catch (PDOException $e) {
+//         if ($_ENV['DEBUG'] == 'true') {
+//             dump($e->getMessage());
+//             die;
+//         } else {
+//             alert('Une erreur est survenue. Merci de réessayer plus tard', 'danger');
+//         }
+//     }  
+// }
 
 function updateRealisation()
 {
 
     global $db;
     $data = [
-        'title' => $_POST['title'],
-        'synopsis' => $_POST['synopsis'],
-        'casting' => $_POST['casting'],
-        'director' => $_POST['director'],
-        'release_date' => $_POST['date'],
-        'duration' => $_POST['duration'],
-        'photo' => $_POST['photo'],
-        'notePress' => $_POST['notePress'],
-        'category' => $_POST['category'],
-        'id' => $_GET['id']
+        'id' => $_GET['id'],
+        'client' => $_POST['client'],
+        'img' => $_FILES['img']["name"],
+        'lien' => $_POST['lien'],
+        'date_publication' => $_POST['date_publication'],
+        'categorie_id' => $_POST['categorie_id'][0],
+        //'id' => $_POST['id'],
+        //'catName' => $_POST['catName']
     ];
 
     try {
-        $sql = 'UPDATE movie SET title = :title, synopsis = :synopsis, duration = :duration, release_date = :release_date, director = :director, casting = :casting, notePress = :notePress, photo = :photo, category = :category, modified = NOW() WHERE id = :id';
+        $sql = 'UPDATE realisations SET client = :client, img = :img, lien = :lien, date_publication = :date_publication, categorie_id = :categorie_id WHERE id = :id';
         $query = $db->prepare($sql);
         $query->execute($data);
-        alert('Un film a bien été modifié.', 'success');
+        alert('Une réalisation a bien été modifié.', 'success');
     } catch (PDOException $e) {
 
         if ($_ENV['DEBUG'] == 'true') {
@@ -120,7 +135,7 @@ function getRealisation()
     global $db;
 
     try {
-        $sql = 'SELECT title, synopsis, duration, director, release_date, casting, notePress, photo, category FROM movie WHERE id = :id';
+        $sql = 'SELECT client, img, lien, date_publication, categorie_id FROM realisations WHERE id = :id';
         $query = $db->prepare($sql);
         $query->execute(['id' => $_GET['id']]);
 

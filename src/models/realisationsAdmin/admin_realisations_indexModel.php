@@ -5,7 +5,7 @@ function getRealisation()
     global $db;
 
     try {
-        $sql = 'SELECT id, img, lien, date_publication, client FROM realisations';
+        $sql = 'SELECT id, img, lien, date_publication, client, categorie_id FROM realisations';
         $query = $db->prepare($sql);
         $query->execute();
 

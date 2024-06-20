@@ -15,13 +15,13 @@ $router->map( 'GET|POST', $admin . '/accueil/editer', 'accueilAdmin/admin_accuei
 $router->map( 'GET|POST', $admin . '/accueil/editer/[i:id]', 'accueilAdmin/admin_accueil_edit', 'editAccueil');
 
 // Services
-$router->map( 'GET', $admin . '/services', 'servicesAdmin/admin_services', 'service_admin');
-$router->map( 'GET', $admin . '/services/tarifs', 'servicesAdmin/admin_services_tarifs', 'tarifs_admin');
-$router->map( 'GET|POST', $admin . '/services/editer/[i:id]', 'movies/admin_movie_edit', 'editMovie');
+$router->map( 'GET|POST', $admin . '/services', 'servicesAdmin/admin_services_index', 'service_admin');
+$router->map( 'GET|POST', $admin . '/services/tarifs', 'servicesAdmin/admin_services_tarifs', 'tarifs_admin');
+$router->map( 'GET|POST', $admin . '/services/editer/[i:id]', 'servicesAdmin/admin_services_edit', 'editService');
 
 
 // Realisations
-$router->map( 'GET', $admin . '/realisations', 'realisationsAdmin/admin_realisations_index', 'realisationli');
-$router->map( 'GET|POST', $admin . '/realisations/editer/[i:id]', '', '');
+$router->map( 'GET|POST', $admin . '/realisations', 'realisationsAdmin/admin_realisations_index', 'realisationLi');
+$router->map( 'GET|POST', $admin . '/realisations/editer/[i:id]', 'realisationsAdmin/admin_realisations_edit', 'editRealisation');
 $router->map( 'GET|POST', $admin . '/realisations/editer', 'realisationsAdmin/admin_realisations_edit', 'addRealisation');
-$router->map( 'GET|POST', $admin . '/realisations/supprimer/[i:id]', '', '');
+$router->map( 'GET|POST', $admin . '/realisations/supprimer/[i:id]', 'realisationsAdmin/admin_realisations_delete', 'deleteRealisation');

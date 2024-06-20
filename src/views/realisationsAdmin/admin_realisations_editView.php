@@ -6,14 +6,14 @@
 <form action="" method="post" enctype="multipart/form-data">
 <div class="mb-4">
 <?php $error = checkEmptyFields('client'); ?>
-    <label for="title" class="form-label">Client: *</label>
+    <label for="client" class="form-label">Client: *</label>
     <input type="text" name="client" id="client" value="<?= getValue('client'); ?>" class="form-control <?= $error['class']; ?>">
    
 </div>
 <div class="mb-4">
 <?php $error = checkEmptyFields('img'); ?>
     <label for="img" class="form-label">Image: *</label>
-    <input type="file" name="img" id="img" class="form-control <?= $error['class']; ?>" value="<?= getValue('img'); ?>">
+    <input type="file" accept="image/png" name="img" id="img" class="form-control <?= $error['class']; ?>" value="<?= getValue('img'); ?>">
    
 </div>
 <div class="mb-4">
@@ -44,7 +44,7 @@
                 echo "$cats->catName";
                 echo '<label>';
                 //echo $cats['catName'];
-                echo '<input type="checkbox" name="categories[]" value="' . $cats->catName . '">';
+                echo '<input type="radio" id="categorie_id[]" name="categorie_id[]" value="' . $cats->id . '">';
                 
                 echo '</label>';
           echo '</div>';

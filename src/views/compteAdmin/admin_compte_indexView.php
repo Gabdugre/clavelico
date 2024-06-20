@@ -3,7 +3,7 @@ compte
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th scope="col">Presentation</th>
+            <th scope="col">Compte</th>
             <th scope="col"></th>
         </tr>
     </thead>

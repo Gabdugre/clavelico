@@ -8,17 +8,20 @@ réalisations
 <table class="table table-striped table-hover">
     <thead>
         <tr>
-            <th scope="col">réalisations</th>
-            <th scope="col"></th>
+            <th scope="col">Client</th>
+            <th scope="col">Réalisation</th>
+            <th scope="col">Catégorie</th>
         </tr>
     </thead>
     <tbody>
         <?php foreach ($realisations as $realisation) { ?>
             <tr>
-                <td class="align-middle"><?= $movie->title; ?></td>
+                <td class="align-middle"><?= $realisation->client; ?></td>
+                <td class="align-middle"><?= $realisation->img; ?></td>
+                <td class="align-middle"><?= $realisation->categorie_id; ?></td>
                 <td class="text-center align-middle">
-                    <a class='btn btn-warning'href="<?= $router->generate('editMovie', ['id' =>  $movie->id]); ?>">Editer</a>
-                    <a class='btn btn-danger'href="<?= $router->generate('deleteMovie', ['id' =>  $movie->id]); ?>">Supprimer</a>
+                    <a class='btn btn-warning'href="<?= $router->generate('editRealisation', ['id' =>  $realisation->id]); ?>">Editer</a>
+                    <a class='btn btn-danger'href="<?= $router->generate('deleteRealisation', ['id' =>  $realisation->id]); ?>">Supprimer</a>
                 </td>
             </tr>
         <?php } ?>
