@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../public/css/headerVitrine.css">
   <!-- <link rel="stylesheet" href="../public/css/reset.css"> -->
+  <link rel="stylesheet" href="../public/css/headerVitrine.css">
+  
   <title><?= $title; ?> | Clavelico</title>
 
 </head>
@@ -42,7 +43,7 @@
       <div id="menu">
         <div class="nav" id="accueil"><a href="<?= $router->generate('accueil'); ?>">accueil</a></div>
         <div class="nav" id="services"><a href="<?= $router->generate('services'); ?>">services</a></div>
-        <div class="nav" id="realisations"><a href="<?= $router->generate('realisations'); ?>">realisation</a></div>
+        <div class="nav" id="realisations"><a href="<?= $router->generate('realisations'); ?>">realisations</a></div>
         <div class="nav" id="contact"><a href="<?= $router->generate('contacter'); ?>">contact</a></div>
       </div>
     </div>

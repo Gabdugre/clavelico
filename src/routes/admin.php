@@ -22,6 +22,6 @@ $router->map( 'GET|POST', $admin . '/services/editer/[i:id]', 'servicesAdmin/adm
 
 // Realisations
 $router->map( 'GET|POST', $admin . '/realisations', 'realisationsAdmin/admin_realisations_index', 'realisationLi');
-$router->map( 'GET|POST', $admin . '/realisations/editer/[i:id]', 'realisationsAdmin/admin_realisations_edit', 'editRealisation');
 $router->map( 'GET|POST', $admin . '/realisations/editer', 'realisationsAdmin/admin_realisations_edit', 'addRealisation');
+$router->map( 'GET|POST', $admin . '/realisations/editer/[i:id]', 'realisationsAdmin/admin_realisations_edit', 'editRealisation');
 $router->map( 'GET|POST', $admin . '/realisations/supprimer/[i:id]', 'realisationsAdmin/admin_realisations_delete', 'deleteRealisation');

@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    margin: 80px auto;
+}
+
+.task {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.post {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+}

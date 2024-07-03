@@ -5,7 +5,9 @@
 /*HEADER VITRINE*/
 header #navbar {
     display: flex;
-	max-width: auto;
+    flex-wrap: wrap;
+	max-width: 100%;
+    width: auto;
 justify-content: space-between;
     background-color:#CEA1A1;
 }

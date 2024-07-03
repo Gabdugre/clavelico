@@ -1,7 +1,7 @@
 
 <?php get_header('Accueil', 'vitrine'); ?>
 <link rel="stylesheet" href="../public/css/accueil.css">
-bonjour
+<h1>bonjour</h1>
 
 <?php
     

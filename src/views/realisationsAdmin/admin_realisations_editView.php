@@ -13,7 +13,7 @@
 <div class="mb-4">
 <?php $error = checkEmptyFields('img'); ?>
     <label for="img" class="form-label">Image: *</label>
-    <input type="file" accept="image/png" name="img" id="img" class="form-control <?= $error['class']; ?>" value="<?= getValue('img'); ?>">
+    <input type="file" accept="images/png" name="img" id="img" class="form-control <?= $error['class']; ?>" value="<?= getValue('img'); ?>">
    
 </div>
 <div class="mb-4">

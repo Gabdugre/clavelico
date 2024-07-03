@@ -26,7 +26,7 @@ $db;
 // }
 
 /**
- * Add a user in the database
+ * Add a Realisation in the database
  */
 
 function addRealisation()
@@ -38,9 +38,8 @@ function addRealisation()
         'img' => $_FILES['img']["name"],
         'lien' => $_POST['lien'],
         'date_publication' => $_POST['date_publication'],
-        'categorie_id' => $_POST['categorie_id'][0],
-        //'id' => $_POST['id'],
-        //'catName' => $_POST['catName']
+        'categorie_id' => $_POST['categorie_id'][0]
+        
     ];
 
     try {
@@ -108,8 +107,6 @@ function updateRealisation()
         'lien' => $_POST['lien'],
         'date_publication' => $_POST['date_publication'],
         'categorie_id' => $_POST['categorie_id'][0],
-        //'id' => $_POST['id'],
-        //'catName' => $_POST['catName']
     ];
 
     try {

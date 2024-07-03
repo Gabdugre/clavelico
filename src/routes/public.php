@@ -1,6 +1,6 @@
 <?php
 
-$router->addMatchTypes(['slug' => '[a-z0-9]+(?:-[a-z0-9]+)*']);
+// $router->addMatchTypes(['slug' => '[a-z0-9]+(?:-[a-z0-9]+)*']);
 
 // Vitrine
 
@@ -11,5 +11,5 @@ $router->map('GET', '/realisations', 'vitrine/realisations', 'realisations');
 $router->map('GET', '/contacter', 'vitrine/contacter', 'contacter');
 
 // Pages
-$router->map( 'GET', '/politique-confidentialite', '');
-$router->map( 'GET', '/mentions-legales', '');
+$router->map( 'GET', '/RGPD', 'vitrine/rgpd', 'rgpd');
+$router->map( 'GET', '/mentions-legales', 'vitrine/mentions-legales', 'mentions-legales' );//informations générales de la société
