@@ -12,8 +12,8 @@
 
 	<header>
 	
-    <div>admin</div>
 <div>
+	<?php displayAlert(); ?>
 	<button><a href="<?= $router->generate('logout') ?>">Déconnexion</a></button></div>
 	</header>
 

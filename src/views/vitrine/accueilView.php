@@ -1,5 +1,6 @@
 
 <?php get_header('Accueil', 'vitrine'); ?>
+<link rel="stylesheet" href="../public/css/reset.css">
 <link rel="stylesheet" href="../public/css/accueil.css">
 <h1>bonjour</h1>
 

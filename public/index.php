@@ -9,6 +9,8 @@ define('SRC', '../src/');
 $dotenv = Dotenv\Dotenv::createImmutable(SRC . 'config');
 $dotenv->load();
 
+session_start();
+
 require SRC . 'config/database.php';
 require SRC . 'includes/forms.php';
 
@@ -24,6 +26,8 @@ $match = $router->match();
 require SRC . 'includes/functions.php';
 
 if (!empty($match['target'])) {
+    checkAdmin($match, $router);
+    
     $_GET = array_merge($_GET, $match['params']);
     $data = [];
     require SRC . 'models/' . $match['target'] . 'Model.php';

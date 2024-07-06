@@ -20,9 +20,7 @@ if (!empty($_POST)) {
     if (!empty($_POST['mail'])) {
         if (!checkEmail($_POST['mail'])) {
             $errorsMessage['mail'] = 'Email non valide';
-        } else if (!empty(checkAlreadyExistEmail())) {
-            $errorsMessage['mail'] = 'Email existe déjà';
-        }
+        } 
     }
 
     // Check password format and match with password confirm

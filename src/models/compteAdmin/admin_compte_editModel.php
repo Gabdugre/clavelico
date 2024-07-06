@@ -5,25 +5,7 @@ $db;
 /***
  * Check if the email is already in the database
  */
-function checkAlreadyExistEmail (): mixed
-{
- global $db;
- if (!empty($_GET['id'])) {
 
-     $email = getCompte($_POST['mail']);
-     if ($email === $_POST['mail']) {
-        return false;
-     }
- }
-
-
-$sql = 'SELECT mail FROM compte WHERE mail = :mail';
-$query = $db->prepare($sql);
-$query->bindParam(':mail', $_POST['mail'], PDO::PARAM_STR);
-$query->execute();
-
-return $query->fetch();
-}
 
 
 

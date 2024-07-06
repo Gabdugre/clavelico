@@ -15,3 +15,4 @@
     <div>ADMIN LOGIN</div>
 
 	</header>
+	<?php displayAlert(); ?>

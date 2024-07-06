@@ -1,3 +1,7 @@
 <?php
 
-$realisations = getRealisation();
+$siteWebs = getSiteWeb();
+
+$affiches = getAffiche();
+
+$idVisuelles = getIdentiteVisuelle();

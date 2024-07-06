@@ -18,8 +18,8 @@ $errorsMessage = [
     //code !empty répétitif, possibilitée d'imbriqué deux blocs de code ?
     
     //save user in database
-if (!empty($_POST['client']) &&  !empty($_FILES['img']) && !empty($_POST['lien'])  && !empty($_POST['date_publication'])) {
-    if (!$errorsMessage['client'] &&  !$errorsMessage['img'] && !$errorsMessage['lien'] && !$errorsMessage['date_publication']) {
+if (!empty($_POST['client']) &&  !empty($_FILES['img']) && !empty($_POST['lien']) && !empty($_POST['date_publication']) && !empty($_POST['categorie_id'])) {
+    if (!$errorsMessage['client'] &&  !$errorsMessage['img'] && !$errorsMessage['lien'] && !$errorsMessage['date_publication'] && !$errorsMessage['categorie_id']) {
     
       if (!empty($_GET['id'])) {
                 updateRealisation();

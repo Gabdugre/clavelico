@@ -61,7 +61,7 @@ function displayAlert ():void
 function checkAdmin(array $match, AltoRouter $router)
 {
 	$existAdmin = strpos($match['target'], 'admin_');
-	if ($existAdmin !== false && empty($_SESSION['compte']['id'])) {
+	if ($existAdmin !== false && empty($_SESSION['user']['id'])) {
 		header('Location: ' . $router->generate('login'));
 		die;
 	}
