@@ -5,11 +5,15 @@
 h1 {
     display: flex;
     justify-content: center;
+    text-decoration-line:underline;
+    text-transform:inherit;
+    text-size-adjust: 20px;
 }
 
 article {
     display: flex;
     max-width: 1200px;
+    width: 70%;
     justify-content: center;
     margin: 80px auto;
 }
@@ -21,6 +25,7 @@ article {
     width: 100%;
     justify-content: space-around;
     align-items: center;
+    
 }
 
 .post {
@@ -29,3 +34,9 @@ article {
     max-width: 1200px;
     width: 100%;
 }
+
+img {
+    height : 200px;
+    width: 200px;
+}
+

@@ -7,6 +7,8 @@ header #navbar {
     display: flex;
 	max-width: 100%;
     width: auto;
+    margin-left: auto;
+	margin-right: auto;
 justify-content: space-between;
     background-color:#CEA1A1;
 }
@@ -59,4 +61,8 @@ background-color:#711312;
 .nav:hover {
     color:#CEA1A1;
     background-color:#711312;
+}
+
+@media screen {
+    
 }
